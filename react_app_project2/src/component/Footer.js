@@ -1,4 +1,5 @@
 import Logo from "../image/Logo.png";
+
 function Footer() {
   return (
     <div class="footer">
