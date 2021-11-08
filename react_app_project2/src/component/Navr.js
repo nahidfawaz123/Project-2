@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar,NavDropdown ,InputGroup,Button ,FormControl,Form,Nav,Container} from 'react-bootstrap';
+import { Navbar,NavDropdown ,Button ,FormControl,Form,Nav,Container} from 'react-bootstrap';
 import Logo from "../image/Logo.png"
 import profile from '../image/profile.png'
 import heart from '../image/heart.png'
@@ -21,22 +21,11 @@ function Navr(){
       </div>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-    
+
       <Nav className="me-auto Link2">
-        
+
         <div className="item"> 
-        <InputGroup className="mb-3">
-    <FormControl
-      placeholder="Recipient's username"
-      aria-label="Recipient's username"
-      aria-describedby="basic-addon2"
-      className="n"
-    />
-    <Button variant="outline-secondary" id="button-addon2">
-      Button
-    </Button>
-  </InputGroup>
-      {/* <Nav.Link >  <Link to="/Connect">تواصل معنا</Link></Nav.Link>
+      <Nav.Link >  <Link to="/Connect">تواصل معنا</Link></Nav.Link>
       <Nav.Link >  <Link to="/OurGoals">آهداف</Link></Nav.Link>
       <Nav.Link > <Link to="/About">من نحن</Link></Nav.Link>
       <NavDropdown className="drop" title=" المناسبات" id="basic-nav-dropdown">
@@ -45,34 +34,7 @@ function Navr(){
           <NavDropdown.Item href="#action/3.3">آعياد ميلاد</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.3"> استقبال المواليد</NavDropdown.Item>
         </NavDropdown>
-      
-        <NavDropdown title=" الخدمات " id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">التصوير </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">المسكات </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">فرق الرقص</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3"> خدمات الضيافة</NavDropdown.Item>
-        </NavDropdown>
-      <Nav.Link >  <Link to="/">الرئيسية</Link></Nav.Link> */}
-      </div>
-      <Navbar.Brand href="#home"> 
-    <img className="Logo" src={Logo}/>
-    </Navbar.Brand>
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
- 
-</Navbar>
-<Navbar>
- <Nav.Link >  <Link to="/Connect">تواصل معنا</Link></Nav.Link>
-      <Nav.Link >  <Link to="/OurGoals">آهداف</Link></Nav.Link>
-      <Nav.Link > <Link to="/About">من نحن</Link></Nav.Link>
-      <NavDropdown className="drop" title=" المناسبات" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">تنسيق الزواجات </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">مناسبات التخرج</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">آعياد ميلاد</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3"> استقبال المواليد</NavDropdown.Item>
-        </NavDropdown>
-      
+
         <NavDropdown title=" الخدمات " id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">التصوير </NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">المسكات </NavDropdown.Item>
@@ -80,7 +42,18 @@ function Navr(){
           <NavDropdown.Item href="#action/3.3"> خدمات الضيافة</NavDropdown.Item>
         </NavDropdown>
       <Nav.Link >  <Link to="/">الرئيسية</Link></Nav.Link>
+      </div>
+
+      <Navbar.Brand href="#home"> 
+    <img className="Logo" src={Logo}/>
+    </Navbar.Brand>
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+
 </Navbar>
+
+
 {/* 
      <Link to="/">الرئيسية</Link>
       <Link to="/Services">الخدمات </Link>
@@ -91,7 +64,7 @@ function Navr(){
       <Link to="/Favorite">مفضله</Link>
       <Link to="/shoppingCart">سله</Link>
       <Link to="/Login">تسجيل دخول</Link> */}
-     
+
         </div>
     )
 }

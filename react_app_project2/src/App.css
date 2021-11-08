@@ -19,7 +19,6 @@
   background-position: center;
   background-size: cover;
   display: flex;
-
   flex-direction:row-reverse
 }
 .Logo{
@@ -35,11 +34,11 @@
 a{
   text-decoration: none;
 }
-/* .Container{
+.Container{
   display: flex;
   gap: 3pxn;
   flex-direction:column-reverse;
-} */
+}
 .icons{
   display: flex;
   gap: 1px;
