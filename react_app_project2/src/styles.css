@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap');
+.sections {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  
+}
+.dance {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+}
+h3{
+  color: #7A7A7A;
+  margin-top: 0px;
+  font-family: 'Cairo', sans-serif;
+}
+.masks{
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+h1{
+  font-family: 'Cairo', sans-serif;
+  color: #3E3E3E;
+}
+p{
+  font-family: 'Cairo', sans-serif;
+  color: #3E3E3E;
+}
+.a-class{
+  margin-top: 0px;
+  background-color: black;
+  color: #9C742C;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 10px 30px;
+  font-family: 'Cairo', sans-serif;
+}
+.section-header{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+.dance-header{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+}
+.h2-section{
+  color: #2A2A2A;
+  font-family: 'Cairo', sans-serif;
+  margin-top: 5px;
+  font-size: 28px;
+  
+}
+.dance-h2{
+  font-family: 'Cairo', sans-serif;
+  margin-top: 0px;
+  background-color: #062120;
+  color: #9C742C;
+  height: 50px;
+  
+}
+.h2-dance{
+  font-family: 'Cairo', sans-serif;
+  color: #3E3E3E;
+}
+.masks-div-note{
+  margin-top: 80px;
+}
