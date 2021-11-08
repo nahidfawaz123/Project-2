@@ -1,14 +1,11 @@
 import React from "react";
 import { Carousel, Button } from "react-bootstrap";
-import bag from "../image/bag.png"
-
-// import '../style.css'
-import '../App.css'
+import bag from "../image/bag.png";
+import hart from "../image/heart.png";
+import "../style.css";
 function Service() {
   return (
-    
     <div className="service">
-     
       {/* ------------------------------------ One------------------------------------------------ */}
 
       <div className="card">
@@ -29,7 +26,13 @@ function Service() {
             />
           </Carousel.Item>
         </Carousel>
-        <h6>تقديمات قدر </h6>
+        <div className="type">
+          <h4>تقديمات قدر </h4>
+        </div>
+        <div className="iconGrid">
+          <img className="iconSize" src={hart} />
+          <img className="ImgSize" src={bag} />
+        </div>
       </div>
 
       {/* ------------------------------------Tow------------------------------------------------ */}
@@ -52,7 +55,13 @@ function Service() {
             />
           </Carousel.Item>
         </Carousel>
-        <h6>تقديمات الرحى </h6>
+        <div className="type">
+          <h4>تقديمات الرحى </h4>
+        </div>
+        <div className="iconGrid">
+          <img className="iconSize" src={hart} />
+          <img className="ImgSize" src={bag} />
+        </div>
       </div>
 
       {/* ------------------------------------ Three------------------------------------------------ */}
@@ -75,8 +84,13 @@ function Service() {
             />
           </Carousel.Item>
         </Carousel>
-
-        <h6>تقديمات لاديم </h6>
+        <div className="type">
+          <h4>تقديمات لاديم </h4>
+        </div>
+        <div className="iconGrid">
+          <img className="iconSize" src={hart} />
+          <img className="ImgSize" src={bag} />
+        </div>
       </div>
       {/* ------------------------------------ Four------------------------------------------------ */}
 
@@ -98,9 +112,13 @@ function Service() {
             />
           </Carousel.Item>
         </Carousel>
-
-        <h6>تقديمات أرتال </h6>
-        <img className="ImgSize" src={bag}/>
+        <div className="type">
+          <h4>تقديمات أرتال </h4>
+        </div>
+        <div className="iconGrid">
+          <img className="iconSize" src={hart} />
+          <img className="ImgSize" src={bag} />
+        </div>
       </div>
       {/* ---------------------------------------Five ----------------------------------------------- */}
 
@@ -122,7 +140,13 @@ function Service() {
             />
           </Carousel.Item>
         </Carousel>
-        <h6>تقديمات دولمة </h6>
+        <div className="type">
+          <h4>تقديمات دولمة </h4>
+        </div>
+        <div className="iconGrid">
+          <img className="iconSize" src={hart} />
+          <img className="ImgSize" src={bag} />
+        </div>
       </div>
     </div>
   );
