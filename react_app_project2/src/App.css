@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap');
+*{
+  font-family: 'Cairo'
+
+}
+.App {
+  text-align: center;
+}
+/* navbar --------------------------------------------------*/
+.Navigation{
+  display: flex;
+  gap: 50px;
+} 
+.main {
+  width: 100%;
+  height: 100px;
+ background: url("../src/image/Logo3.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+
+  flex-direction:row-reverse
+}
+.Logo{
+  width: 100px;
+
+}
+
+.navbar-light .navbar-nav .nav-link   a {
+ color: #D7AA67;
+ width: 100%;
+ 
+}
+a{
+  text-decoration: none;
+}
+/* .Container{
+  display: flex;
+  gap: 3pxn;
+  flex-direction:column-reverse;
+} */
+.icons{
+  display: flex;
+  gap: 1px;
+}
+.img-icon{
+ width: 30px;
+}
+.Link2{
+  margin-left: 300px;
+
+}
+.item{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  width: 100%;
+  gap: 30px;
+  
+  margin-top: 30px;
+}
+.n{
+  width: 100%;
+}
+.navbar.Brand{
+  margin-left: 20px;
+}
+.drop{
+  color: #D7AA67;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  width: 100px;
+  color:  #D7AA67;
+}
+input{
+  width: 100%;
+
+}
+/* Footer --------------------------------------------------*/
+
+.footer{
+  height: 400px;
+  grid-column:1/-1;
+  background: url("../src/image/Logo3.png");
+  color:  #D7AA67;
+  text-align:center;
+ 
+}
+.img-footer{
+  margin: 20px;
+  width: 100px;
+}
+.footer-box{
+  margin: 40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  
+}
+
+.footer-box-c{
+  align-self:center;
+  
+}
+.footer-box-c li{
+  margin: 20px;
+}
+
+.img-footer{
+  margin-bottom: 10px;
+  width: 50%;
+}
+ ul li {
+  list-style: none;
+}
+@media screen and (max-width:700px){
+  .footer-box{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .footer-apps{
+    margin-top:30px;
+  }
+  .footer-box-r .fa{
+    margin:15px 0;
+  }
+}
+/* style.css --------------------------------------------------*/
+/* slider */
+.imgslider{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+}
+.blockSlider{
+height: 150px ;
+width: 250px;
+padding: 15px;
+margin-bottom: 15%;
+margin-right: 100%;
+background-color: rgba(255, 255, 255, 0.719);
+}
+.service{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+gap: 20px;
+
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.ImgSize{
+  height: 20px;
+  width: 20px;
+  margin-left: 50%;
+  margin-right: 50%;
+
+}
+ 
+/*  styles */
+
+.sections {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  
+}
+.dance {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+}
+h3{
+  color: #7A7A7A;
+  margin-top: 0px;
+  font-family: 'Cairo', sans-serif;
+}
+.masks{
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+h1{
+  font-family: 'Cairo', sans-serif;
+  color: #3E3E3E;
+}
+p{
+  font-family: 'Cairo', sans-serif;
+  color: #3E3E3E;
+}
+.a-class{
+  margin-top: 0px;
+  background-color: black;
+  color: #9C742C;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 10px 30px;
+  font-family: 'Cairo', sans-serif;
+}
+.section-header{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+.dance-header{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+}
+.h2-section{
+  color: #2A2A2A;
+  font-family: 'Cairo', sans-serif;
+  margin-top: 5px;
+  font-size: 28px;
+  
+}
+.dance-h2{
+  font-family: 'Cairo', sans-serif;
+  margin-top: 0px;
+  background-color: #062120;
+  color: #9C742C;
+  height: 50px;
+  
+}
+.h2-dance{
+  font-family: 'Cairo', sans-serif;
+  color: #3E3E3E;
+}
+.masks-div-note{
+  margin-top: 80px;
+}
