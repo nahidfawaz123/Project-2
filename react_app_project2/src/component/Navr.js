@@ -47,7 +47,7 @@ function Navr(){
       <Navbar.Brand href="#home"> 
     <img className="Logo" src={Logo}/>
     </Navbar.Brand>
-      </Nav>
+      </Nav>n
     </Navbar.Collapse>
   </Container>
 
