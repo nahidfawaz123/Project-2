@@ -10,6 +10,8 @@ import Login from "./component/Login";
 import ShoppingCart from "./component/shoppingCart";
 import Connect from "./component/Connect";
 import Footer from "./component/Footer";
+import Singup from "./component/Singup";
+import Admin from "./component/Admin";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +27,8 @@ function App() {
           <Route path="/Favorite" element={<Favorite />} />
           <Route path="/shoppingCart" element={<ShoppingCart />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Singup" element={<Singup />} />
+          <Route path="/Admin" element={<Admin />} />
         </Routes>
 
         <Footer />

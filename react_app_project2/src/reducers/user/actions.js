@@ -1,22 +1,23 @@
-export const setUser = (videos) => {
+export const login = (user) => {
+    console.log(user);
     // user: is an object that represents a user
     return {
-      type: "SET_USER",
-      payload: videos,
+      type: "LOG_IN",
+      payload: user,
     };
   };
-//   export const WatchLater = (videos) => {
-//     // user: is an object that represents a user
-//     return {
-//       type: "WATCH_LATER",
-//       payload: videos,
-//     };
-//   }; 
-//   // deleteWatchLater
-//   export const deleteWatchLater = (videos) => {
-//     // user: is an object that represents a user
-//     return {
-//       type: "DELETE_WATCHLATER",
-//       payload: videos,
-//     };
-//   }; 
+  export const logout = (user) => {
+    // user: is an object that represents a user
+    return {
+      type: "LOG_OUT",
+      payload: user,
+    };
+  };
+  export const singUp = (user) => {
+      console.log("action"+user.email)
+    // user: is an object that represents a user
+    return {
+      type: "SING_UP",
+      payload: user,
+    };
+  };
