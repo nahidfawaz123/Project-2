@@ -1,25 +1,56 @@
-import '../App.css'
-import gold from "../image/gold.PNG"
-import App from '../App';
-function Masks() {
+// import '../styles.css'
+import { useNavigate } from "react-router-dom";
+import "../App.css";
+import gold from "../image/gold.PNG";
+function Dance() {
+  const navigate = useNavigate();
+
+  function goTOItems(x) {
+    console.log(x);
+    return navigate("/Items/" + x);
+  }
   return (
-    <div className="masks">
+    <div>
+      <div className="dance-header">
+        <img height="70px" src={gold} />
+        <h2 className="h2-dance">فرق الرقص</h2>
+        <img height="70px" src={gold} />
+      </div>
+      <div className="dance">
         <div>
-            <img width="800px" height="500px" src="https://test.easacc.com/noura/wp-content/uploads/2021/01/image.jpg"/>
+          <img
+            height="330px"
+            width="480px"
+            src="https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg"
+            onClick={() => goTOItems("aliastierad")}
+          />
+          <h2 className="dance-h2">الاستعـراض</h2>
         </div>
-        <div className="masks-div-note">
-            <h1>المسكات</h1>
-            <p>مسكات العروس جزء من إطلالة الفتاة بحفل الزفاف وهو ما يجعل اختياره يستحق بعض الوقت</p>
-                 <p>منكِ،لإطلالة مثالية، ولهذا إليكِ أجمل مسكات عرايس فخمة</p>
-                 <br/>
-            <a className="a-class" href="http://test.easacc.com/noura/product-category/%d8%a7%d9%84%d9%85%d8%b3%d9%83%d8%a7%d8%aa/" >
-					
-					
-					المـزيـد				</a>
+        <div>
+          <img
+            height="330px"
+            width="480px"
+            src="https://test.easacc.com/noura/wp-content/uploads/2021/01/New-Project-6.png"
+            onClick={() => goTOItems("Sharqi")}
+          />
+          <h2 className="dance-h2">الشـرقـي</h2>
         </div>
-        <br/>
+        <div>
+          <img
+            height="330px"
+            width="480px"
+            src="https://test.easacc.com/noura/wp-content/uploads/2021/01/New-Project-4.png"
+            onClick={() => goTOItems("Ballet")}
+          />
+          <h2 className="dance-h2">البــالية</h2>
+        </div>
+      </div>
+      <div></div>
+      <img height="75px" src={gold} />
+      <h2 className="h2-dance">تقديمات العشاء </h2>
+      <img height="75px" src={gold} />
     </div>
   );
 }
 
-export default Masks;
+export default Dance;

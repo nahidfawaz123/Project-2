@@ -81,7 +81,8 @@ function Navr() {
                         className="img-icon"
                         src={logOut}
                       />
-                      <p>{state.user.name}</p>
+                      
+                        <Link to="/Admin" > <p>{state.user.name}</p></Link>
                     </div>
                   ) : (
                     <Link to="/Login">
