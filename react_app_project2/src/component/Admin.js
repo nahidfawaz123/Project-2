@@ -5,7 +5,7 @@ function Admin() {
   const [img, setimg] = useState("");
   const [prise, setprise] = useState("");
   const [name, setname] = useState("");
-  
+  const [type, settype] = useState("");
   const dispatch = useDispatch();
   // const navigate = useNavigate();
 
@@ -21,10 +21,11 @@ function Admin() {
       name: name,
       img: img,
       prise: prise,
+      type:type
     };
     console.log(img);
     dispatch(setItems(info));
-    console.log(state.Items);
+    console.log(state.item);
     //  navigate("/")
   };
 
@@ -66,6 +67,17 @@ function Admin() {
               required
             />
           </label>
+          <label>
+            <p>type</p>
+            <input
+              type="text"
+              value={type}
+              onChange={(e) => {
+                settype(e.target.value);
+              }}
+              required
+            />
+          </label>
           <div>
             <button type="submit" onClick={(e) => SubmitSingup(e)}>
               Submit
@@ -73,6 +85,20 @@ function Admin() {
           </div>
         </form>
       </div>
+
+{state.item.map((e,i)=>{
+  return(
+    
+        <div>
+         <img src={e.img} />
+         <p> {e.name}  </p>
+         <p> {e.type}  </p>
+         <p> {e.prise}  </p>
+         <button onClick={(e) => SubmitSingup(e)}>X </button>
+        </div>
+  )
+})}
+
     </div>
   );
 }

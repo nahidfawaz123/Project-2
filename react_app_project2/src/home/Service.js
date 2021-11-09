@@ -4,6 +4,7 @@ import bag from "../image/bag.png";
 import hart from "../image/heart.png";
 import "../style.css";
 function Service() {
+  
   return (
     <div className="service">
       {/* ------------------------------------ One------------------------------------------------ */}

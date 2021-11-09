@@ -46,8 +46,10 @@ function Navr() {
         <Container style={{ display: "block" }}>
           <Row style={{ direction: "rtl" }}>
             <Col sm={3}>
-              <Navbar.Brand href="/">
+              <Navbar.Brand >
+              <Link to="/">
                 <img className="Logo" src={Logo} alt="img" />
+                </Link>
               </Navbar.Brand>
             </Col>
             <Col sm={6}>
