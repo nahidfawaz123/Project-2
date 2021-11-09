@@ -10,7 +10,6 @@ const initialState = {
         return {
             videos: payload,
         };
-     
       default:
         return state;
     }
