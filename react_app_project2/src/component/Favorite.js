@@ -48,7 +48,7 @@ console.log(state.Favorite);
                   </div>
                   <div className="iconGrid">
                     <img className="iconSize" src={hart} onClick={() => dispatch(deleteFavorite(element))} />
-                    <img className="ImgSize" src={bag} onClick={() => dispatch(Cart(element))} />
+                    
                   </div>
                 </div>
 

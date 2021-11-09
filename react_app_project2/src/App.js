@@ -12,6 +12,7 @@ import Connect from "./component/Connect";
 import Footer from "./component/Footer";
 import Singup from "./component/Singup";
 import Admin from "./component/Admin";
+import Items from "./component/Items";
 function App() {
   return (
     <BrowserRouter>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Singup" element={<Singup />} />
           <Route path="/Admin" element={<Admin />} />
+          <Route path="/Items/:id" element={<Items />} />
         </Routes>
 
         <Footer />
