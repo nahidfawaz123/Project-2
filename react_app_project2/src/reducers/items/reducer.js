@@ -1,6 +1,43 @@
 
 const initialState = {
-    Items: [],
+    Items: [{
+        name:'تقديمات دولمة',
+        type: 'diner',
+        img1: 'http://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.04.12-AM-300x300.jpeg',
+        img2 :'http://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.04.32-AM-300x300.jpeg',
+        price:50,
+    },
+    {
+        name:'تقديمات أرتال',
+        type: 'diner',
+        img1: 'https://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.14.43-AM-300x300.jpeg',
+        img2 :'http://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.15.48-AM-300x300.jpeg',
+        price:40,
+    },
+    {
+        name:'تقديمات لاديم',
+        type: 'diner',
+        img1: 'https://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.17.49-AM-300x300.jpeg',
+        img2 :'http://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.18.28-AM-300x300.jpeg',
+        price:60,
+    },
+    {
+        name:'تقديمات الرحى',
+        type: 'diner',
+        img1: 'https://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.04.20-AM.jpeg',
+        img2 :'http://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.06.12-AM-1-300x300.jpeg',
+        price:50,
+    },
+    {
+        name:'تقديمات قدر',
+        type: 'diner',
+        img1: 'https://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.04.01-AM-300x300.jpeg',
+        img2 :'http://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.05.27-AM-300x300.jpeg',
+        price:45,
+    },
+
+
+],
     Favorite: [],
     Cart: []
   };
@@ -18,7 +55,6 @@ const initialState = {
         case "SET_FAVORITE":
             // the payload is an object
             const FavoriteList = state.Favorite.slice()
-            console.log(FavoriteList.length);
             let x=false;
           for (let i=0;i<FavoriteList.length;i++){
               if(FavoriteList[i].name === payload.name){
@@ -55,12 +91,14 @@ const initialState = {
               for (let i=0;i<CartList.length;i++){
                   if(CartList[i].name === payload.name){
                     inCart=true
-                      alert("The items already exists")
+                      alert("The cart already exists")
                       break;
                   }  
             }
             if(inCart === false){
-                FavoriteList.push(payload)
+                CartList.push(payload)
+                console.log(CartList);
+
             }
             
                

@@ -7,6 +7,7 @@ export const setItems = (items) => {
   };
   export const Favorite = (items) => {
     // user: is an object that represents a user
+    console.log(items);
     return {
       type: "SET_FAVORITE",
       payload: items,
