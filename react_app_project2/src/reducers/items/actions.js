@@ -16,6 +16,7 @@ export const setItems = (items) => {
   //    : <Link to="/Login"><img className="img-icon" src={profile}/></Link> }</Nav.Link> 
   export const Favorite = (items) => {
     // user: is an object that represents a user
+    console.log(items);
     return {
       type: "SET_FAVORITE",
       payload: items,
