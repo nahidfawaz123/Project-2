@@ -13,12 +13,14 @@ import "../App.css";
 import bag from "../image/bag.png";
 import hart from "../image/heart.png";
 import { useParams } from "react-router-dom";
+import { Favorite } from "../reducers/items/actions";
 
 function Items() {
     const {id} = useParams()
   const state = useSelector((state) => {
     return {
       item: state.ItemsReducer.Items,
+      Favorites: state.ItemsReducer.Favorite,
     };
   });
   const dispatch = useDispatch();
@@ -55,7 +57,7 @@ function Items() {
             </ListGroup>
             <Card.Body>
               <Card.Link href="#">
-                <img className="iconSize" src={hart} />
+                <img className="iconSize" src={hart} onClick={() => dispatch(Favorite(element))} />
               </Card.Link>
               <Card.Link href="#">
                 <img className="ImgSize" src={bag} onClick={()=>dispatch(Cart(element))}/>
