@@ -27,6 +27,7 @@ function Navr() {
       user: state.userReducer.user,
     };
   });
+  
 
   //Function Exit user
   const logoutuser = () => {
@@ -39,6 +40,11 @@ function Navr() {
     );
     navigate("/");
   };
+
+  // if(state.user.LoggdIn === true){
+  //   console.log("خخخخخخخخ");
+  //   navigate("/")
+  // } 
 
   return (
     <div className="Navigation">

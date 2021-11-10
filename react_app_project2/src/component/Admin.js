@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../reducers/items/actions";
 import { deleteItems } from "../reducers/items/actions";
 import { updetItems } from "../reducers/items/actions";
+import { useForm } from "react-hook-form";
 function Admin() {
   const [img, setImg] = useState("");
   const [prise, setPrise] = useState("");
@@ -14,6 +15,7 @@ function Admin() {
   const [priseUpdate, setPriseUpdate] = useState("");
   const [nameUpdate, setNameUpdate] = useState("");
   const [typeUpdate, setTypeUpdate] = useState("");
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const dispatch = useDispatch();
   // const navigate = useNavigate();
 
@@ -24,7 +26,8 @@ function Admin() {
     };
   });
   const submitSingup = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    
     const info = {
       name: name,
       img1: img,
@@ -35,7 +38,7 @@ function Admin() {
   };
 
   const submitUpdate = (e, item) => {
-    e.preventDefault();
+    // e.preventDefault();
     const updetItem = {
       item: {
         // oldName in items
@@ -56,7 +59,8 @@ function Admin() {
     <div>
       {/* add items */}
       <div>
-        <form>
+      {/* onSubmit={handleSubmit(submitSingup)} */}
+        <form >
           <label>
             <p>img</p>
             <input
@@ -64,47 +68,57 @@ function Admin() {
               value={img.src}
               onChange={(e) => {
                 setImg(e.target.value);
-              }}
-              required
+              } } 
+              {...register("img", { required: "img is Required " })}
             />
+             {errors.img && (<small className="text-danger"> img is Required </small>)}
+           
           </label>
+         
           <label>
             <p>name</p>
             <input
               type="text"
-              value={name}
+             
               onChange={(e) => {
                 setName(e.target.value);
               }}
-              required
+              {...register("name", { required: "name is Required " })}
             />
+            {errors.name && (<small className="text-danger"> name is Required </small>)}
           </label>
           <label>
             <p>prise</p>
             <input
               type="text"
-              value={prise}
               onChange={(e) => {
                 setPrise(e.target.value);
               }}
-              required
-            />
+              {...register("prise", { required: "prise is Required " })}
+              />
+             
+             {errors.prise && (<small className="text-danger"> prise is Required </small>)}
           </label>
           <label>
             <p>type</p>
             <input
               type="text"
-              value={type}
               onChange={(e) => {
                 setType(e.target.value);
               }}
-              required
-            />
+              {...register("type", { required: "type is Required " })}
+              />
+                {errors.type && (<small className="text-danger"> type is Required </small>)}
           </label>
           <div>
-            <button type="submit" onClick={(e) => submitSingup(e)}>
+
+
+            <button type="submit" onClick={handleSubmit(submitSingup)} >
               Submit
             </button>
+            {/* <button type="submit" onClick={(e) => submitSingup(e)}>
+              Submit
+            </button> */}
           </div>
         </form>
       </div>
@@ -112,6 +126,37 @@ function Admin() {
       {state.items.map((e, i) => {
         return (
           <div>
+  
+          {/* <div className="card "    style={{ width: "23.9rem" }}>
+            <img variant="top" src={element.img1} className="item-image" />
+            <Card.Body>
+              <Card.Title>{element.name}</Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>{element.price} :السعر</ListGroupItem>
+            </ListGroup>
+            <Card.Body>
+              <Card.Link href="#">
+                <img className="iconSize" src={hart} />
+              </Card.Link>
+              <Card.Link href="#">
+              <button
+              onClick={() => {
+                const action = deleteItems(e);
+                dispatch(action);
+              }}
+            >
+              X{" "}
+            </button>
+
+            
+          </div> */}
+
+
+
+
+
+
             <img src={e.img1} />
             <p> {e.name} </p>
             <p> {e.type} </p>
@@ -123,7 +168,7 @@ function Admin() {
               }}
             >
               X{" "}
-            </button>
+            </button> 
             {/* from updet */}
             <form>
               <label>

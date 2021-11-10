@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Cart} from "../reducers/items/actions"
@@ -12,6 +13,7 @@ import "../App.css";
 import bag from "../image/bag.png";
 import hart from "../image/heart.png";
 import { useParams } from "react-router-dom";
+
 function Items() {
     const {id} = useParams()
   const state = useSelector((state) => {
@@ -19,31 +21,25 @@ function Items() {
       item: state.ItemsReducer.Items,
     };
   });
-
   const dispatch = useDispatch();
+  const [noOfElement, setNoOfElement] = useState(8);
 
-  //const add = (element) => {
-
-    
-
-    //const action = Cart(element);
-
-    //console.log("hi")
-
-   // dispatch(action);
- // };
+  const slice = state.item.slice(0,noOfElement)
 
   function add (ele) {
     const action = Cart(ele);
-
-    //console.log("hi")
-
     dispatch(action);
 
   }
+  const loadmore = ()=>{
+    setNoOfElement(noOfElement +noOfElement)
+  }
+  useEffect(()=>{
+    loadmore()
+  },[])
   return (
     <div className="items-div">
-      {state.item.map((element, index) => {
+      {slice.map((element, index) => {
           if(id===element.type){
 
           
@@ -69,6 +65,7 @@ function Items() {
         );
           }
       })}
+      <button onClick={ ()=> loadmore()} > load more</button>
     </div>
   );
 }

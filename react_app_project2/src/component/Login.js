@@ -12,42 +12,52 @@ const navigate = useNavigate();
 const state = useSelector((state) => {
   console.log(state);
   return {
-    user: state.userReducer.users,
+    user: state.userReducer.user,
+    users: state.userReducer.users,
   };
 });
+console.log("dddd"+state.user.LoggdIn)
+ if(state.user.LoggdIn===true){
+   
+      navigate("/")
+    } 
+
 const SubmitLogin=(e) =>{
   e.preventDefault()
+  console.log("before"+state.user.LoggdIn)
+
   dispatch(login({
     name:Name,
     Password: Password,
     LoggdIn:true
   }))
+  
+  console.log("after"+state.user.LoggdIn)
   verification()
+  console.log("sttttttt",state)
+
+  if(state.user.LoggdIn === true){
+    console.log("homwwwwe");
+    navigate("/")
+  } 
+  
+ 
   //  navigate("/")
 }
 const verification=() =>{
-const admin=state.user[0]
-console.log(admin);
+  
+
+const admin=state.users[0]
+console.log("the admin account ",state);
 if(admin.name ===Name  ){
   console.log("adin");
   navigate("/Admin")
-}else {
-  console.log("home");
-  // navigate("/")
-} }
+ } 
+
+}
 
 
-  // {state.user.map((e,i)=>{
-  //   console.log(e.name  +e.Password);
-  //   if(e.name === "admin" && e.Password === 1){
-  //     console.log("adin");
-  //     // navigate("/Admin")
-  //   }else if(e.LoggdIn === true){
-  //     console.log("home");
-  //     navigate("/")
-  //   } 
-    
-  // }) }
+
 
 
     return (
@@ -59,11 +69,11 @@ if(admin.name ===Name  ){
       <form>
       <label>
         <p>Username</p>
-        <input type="text"  value={Name} onChange={(e)=>{ setName(e.target.value)}} required />
+        <input type="text"   onChange={(e)=>{ setName(e.target.value)}} required />
       </label>
       <label>
         <p>Password</p>
-        <input type="password" value={Password} onChange={(e)=>{ setPassword(e.target.value)}} required />
+        <input type="password"  onChange={(e)=>{ setPassword(e.target.value)}} required />
       </label>
       <div>
         <button type="submit"  onClick={(e)=> SubmitLogin(e) }>Submit</button>

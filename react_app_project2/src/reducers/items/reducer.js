@@ -97,7 +97,40 @@ const initialState = {
       img1: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
       img2: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
       price: 800,
-    },
+    },  {
+        name: "1الاستعـراض",
+        type: "aliastierad",
+        img1: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+        img2: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+        price: 800,
+      } , {
+        name: "2الاستعـراض",
+        type: "aliastierad",
+        img1: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+        img2: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+        price: 800,
+      } , {
+        name: "4الاستعـراض",
+        type: "aliastierad",
+        img1: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+        img2: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+        price: 800,
+      },
+      {
+        name: "5الاستعـراض",
+        type: "aliastierad",
+        img1: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+        img2: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+        price: 800,
+      }
+  , {
+    name: "6الاستعـراض",
+    type: "aliastierad",
+    img1: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+    img2: "https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
+    price: 800,
+  }
+,
   ],
   Favorite: [],
   Cart: [],

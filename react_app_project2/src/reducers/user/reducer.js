@@ -16,7 +16,7 @@ const userReducer = (state = initialState, { type, payload }) => {
       console.log(usersList);
       let inUsers = false;
       for (let i = 0; i < usersList.length; i++) {
-        console.log(usersList.Password);
+        console.log(usersList[i].name);
         if (usersList[i].name === payload.name) {
           alert("Yes");
           inUsers = true;
