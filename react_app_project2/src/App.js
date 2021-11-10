@@ -13,6 +13,7 @@ import Footer from "./component/Footer";
 import Singup from "./component/Singup";
 import Admin from "./component/Admin";
 import Items from "./component/Items";
+import Search from "./home/Search";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
         <Navr />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/Services" element={<Services />} />
           <Route path="/Occasions" element={<Occasions />} />
           <Route path="/About" element={<About />} />

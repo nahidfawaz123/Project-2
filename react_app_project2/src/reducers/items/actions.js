@@ -45,3 +45,11 @@ export const setItems = (items) => {
       payload: items,
     };
   }; 
+
+  export const searchData = (items) => {
+    // user: is an object that represents a user
+    return {
+      type: "SET_DATA",
+      payload: items,
+    };
+  }; 
