@@ -1,3 +1,5 @@
+import { Cart, Favorite } from "./actions";
+
 const initialState = {
     
   Items: [
@@ -346,17 +348,36 @@ const initialState = {
         img1:"https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
         img2:"https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
         price:10000
-    }
-
-
+    },
+    
 ],
   Favorite: [],
   Cart: [],
    Search: '',
+   Price:'',
+   Order:[],
+   Total:0
 };
 // action -> {type: "ABC", payload: 2}
 const ItemsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+
+    case "SET_PRICE":
+          return{
+              Price:payload,
+              Items:state.Items,
+              Favorite:state.Favorite,
+              Cart:state.Cart
+          }
+          case "SET_ORDER":
+          return{
+              Order:payload,
+              Price:state.Price,
+              Items:state.Items,
+              Favorite:state.Favorite,
+              Cart:state.Cart,
+              
+          }
       case "SET_DATA":
             
         console.log("Search"+state.Search)
@@ -419,7 +440,8 @@ const ItemsReducer = (state = initialState, { type, payload }) => {
     //    deleteWatchLater
     case "DELETE_FAVORITE":
       return {
-        Items: payload,
+        Items: state.Items,
+        Cart:state.Cart,
         Favorite: state.Favorite.filter((element) => {
           return element.name !== payload.name;
         }),
@@ -449,28 +471,18 @@ const ItemsReducer = (state = initialState, { type, payload }) => {
                     Favorite: state.Favorite,
                     Cart: CartList
                 };
-            //    deleteWatchLater
-            case "DELETE_CART":
-                return {
-    
-                    Items: state.Items,
-                    Cart: state.Cart.filter((element) => {
-                        return element.name !== payload.name;
-                   
-                    }),
-                };
-      return {
-        Items: state.Items,
-        Favorite: state.Favorite,
-        Cart: CartList,
-      };
+          
+      
     //    deleteWatchLater
     case "DELETE_CART":
       return {
-        Items: payload,
+        Items: state.Items,
+        Favorite:state.Favorite,
         Cart: state.Cart.filter((element) => {
           return element.name !== payload.name;
         }),
+        Order:state.Cart
+        
       };
 
     default:

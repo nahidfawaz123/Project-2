@@ -13,7 +13,9 @@ import Footer from "./component/Footer";
 import Singup from "./component/Singup";
 import Admin from "./component/Admin";
 import Items from "./component/Items";
+import Orders from "./component/Orders";
 import Search from "./home/Search";
+import Price from "./component/Price"
 function App() {
   return (
     <BrowserRouter>
@@ -22,9 +24,9 @@ function App() {
         <Routes>
     
           <Route path="/search" element={<Search />} />
-
           <Route exact path="/" element={<Home />} />
-
+          <Route path="/priceOption" element={<Price />} />
+          <Route path="/Orders" element={<Orders />} />
           <Route path="/Services" element={<Services />} />
           <Route path="/Occasions" element={<Occasions />} />
           <Route path="/About" element={<About />} />

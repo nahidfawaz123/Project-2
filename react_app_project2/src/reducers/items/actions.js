@@ -4,6 +4,7 @@ export const setItems = (items) => {
     type: "SET_ITEMS",
     payload: items,
   };
+}
 
   // <Nav.Link >    {state.user.LoggdIn === true? 
   //   <div className="icon-LogOut"> 
@@ -71,4 +72,18 @@ export const updetItems = (data) => {
       payload: items,
     };
   }; 
-}
+
+  export const getprice = (items)=> {
+
+    return{
+      type:"SET_PRICE",
+      payload:items,
+    }
+  }
+  export const getOrder = (items)=> {
+
+    return{
+      type:"SET_ORDER",
+      payload:items,
+    }
+  }

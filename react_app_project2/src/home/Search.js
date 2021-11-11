@@ -9,7 +9,8 @@ import {
   Card,
   ListGroupItem,
   ListGroup,
-} from "react-bootstrap";import { Favorite , Cart} from "../reducers/items/actions";
+} from "react-bootstrap";
+import { Favorite , Cart} from "../reducers/items/actions";
 function Search() {
   const dispatch = useDispatch();
 
