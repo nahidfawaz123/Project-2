@@ -165,7 +165,26 @@ ul li {
   margin-left: 50%;
   margin-right: 50%;
 }
-
+.disbly{
+  display:flex;
+  width: 700px;
+  margin: 30px;
+  padding: 20px;
+  gap: 30px;
+align-content:flex-start;
+}
+/* form */
+.form{
+  margin-top: 20px;
+ margin-left: 430px;
+  width: 600px;
+}
+span{
+  color: blue;
+}
+.buttonLoad{
+  margin-left: 100px;
+}
 /*  styles */
 
 .sections {
@@ -444,3 +463,19 @@ ul {
   
 }
 
+
+#code {
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: center
+}
+
+.items-admin{
+  
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto ;
+  gap: 15px;
+  justify-content: center;
+}
