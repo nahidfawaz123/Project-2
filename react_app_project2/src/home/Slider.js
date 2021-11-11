@@ -1,6 +1,6 @@
 import React from 'react'
-// import '../style.css'
-import '../App.css'
+import '../style.css'
+// import '../App.css'
 import {Carousel ,Button } from 'react-bootstrap';
 import img1 from '../image/image1.jpg'
 import img2 from '../image/image2.jpg'

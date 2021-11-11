@@ -6,8 +6,7 @@ import hart from "../image/heart.png";
 import "../style.css";
 import { useParams, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { Favorite } from "../reducers/items/actions";
-import { Cart } from "../reducers/items/actions";
+import { Favorite,Cart } from "../reducers/items/actions";
 function Service() {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,7 +22,7 @@ function Service() {
   return (
     <div className="service">
       {state.items.map((element) => {
-        if (element.type==='diner'){
+        if (element.type==='dinner'){
         return (
           <div>
             <div className="card">

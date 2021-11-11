@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Navbar,
@@ -15,20 +16,36 @@ import profile from "../image/profile.png";
 import heart from "../image/heart.png";
 import cart from "../image/cart.png";
 import logOut from "../image/logOut.png";
+import search from "../image/search.png";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../reducers/user/actions";
+import { searchData } from "../reducers/items/actions";
 import "../App.css";
 function Navr() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const state = useSelector((state) => {
-    console.log(state);
+    // console.log(state);
     return {
       user: state.userReducer.user,
+      search: state.ItemsReducer.Search,
     };
   });
-  
+  const [serchElm, setSerch] = useState("");
+  let SechEl;
+  function getData(e) {
+    SechEl = e.target.value;
+    setSerch(SechEl);
+    console.log(serchElm);
+  }
+  const sendData = () => {
+    console.log(serchElm);
+    dispatch(searchData(serchElm));
+    console.log(searchData(serchElm));
+    navigate("/search");
+  };
 
+  
   //Function Exit user
   const logoutuser = () => {
     dispatch(
@@ -63,8 +80,10 @@ function Navr() {
                 type="search"
                 placeholder="بحث"
                 className="me-2 mt-3"
+                onChange={getData}
                 aria-label="Search"
               />
+              <img className="img-icon" src={search} onClick={sendData} />
             </Col>
             <Col sm={3}>
               <div className="icons  mt-3">
@@ -99,7 +118,6 @@ function Navr() {
               </div>
             </Col>
           </Row>
-
           <Row>
             <Navbar.Toggle aria-controls="basic-navbar-nav " />
             <Navbar.Collapse id="basic-navbar-nav">
