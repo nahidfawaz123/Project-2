@@ -1,3 +1,4 @@
+import { Form, Button, Row, Col } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { singUp } from "../reducers/user/actions";
@@ -6,6 +7,7 @@ function Singup() {
   const [nameNew, setnameNew] = useState("");
   const [emailNew, setemailNew] = useState("");
   const [passwordNew, setpasswordNew] = useState("");
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -15,6 +17,7 @@ function Singup() {
       user: state.userReducer.user,
     };
   });
+
   const SubmitSingup = (e) => {
     e.preventDefault();
     const info = {
@@ -22,8 +25,6 @@ function Singup() {
       email: emailNew,
       Password: passwordNew,
       LoggdIn: true,
-      cart: "",
-      favorite: "",
     };
 
     dispatch(singUp(info));
@@ -32,50 +33,72 @@ function Singup() {
   };
 
   return (
-    <div>
+    <div className="form">
       {/* new registration */}
-      <div className=" singup">
-        <form>
-          <label>
-            <p>Username</p>
-            <input
-              type="text"
-              value={nameNew}
-              onChange={(e) => {
-                setnameNew(e.target.value);
-              }}
-              required
-            />
-          </label>
-          <label>
-            <p>Email</p>
-            <input
-              type="Email"
-              value={emailNew}
-              onChange={(e) => {
-                setemailNew(e.target.value);
-              }}
-              required
-            />
-          </label>
-          <label>
-            <p>Password</p>
-            <input
-              type="password"
-              value={passwordNew}
-              onChange={(e) => {
-                setpasswordNew(e.target.value);
-              }}
-              required
-            />
-          </label>
-          <div>
-            <button type="submit" onClick={(e) => SubmitSingup(e)}>
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
+
+      
+        <Form>
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+            <Form.Label column sm="2">
+              Username
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="text"
+                placeholder="Enter Username"
+                value={nameNew}
+                onChange={(e) => {
+                  setnameNew(e.target.value);
+                }}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+            <Form.Label column sm="2">
+              Email
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={emailNew}
+                onChange={(e) => {
+                  setemailNew(e.target.value);
+                }}
+              />
+            </Col>
+          </Form.Group>
+
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
+            <Form.Label column sm="2">
+              Password
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={passwordNew}
+                onChange={(e) => {
+                  setpasswordNew(e.target.value);
+                }}
+              />
+            </Col>
+          </Form.Group>
+
+          <Button
+            className="Submit"
+            type="submit"
+            onClick={(e) => SubmitSingup(e)}
+          >
+            Submit
+          </Button>
+          <Form.Text className="text-muted"></Form.Text>
+        </Form>
+      
     </div>
   );
 }

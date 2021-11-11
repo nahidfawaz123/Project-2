@@ -1,6 +1,9 @@
+import { Cart, Favorite } from "./actions";
 
 const initialState = {
-    Items: [{
+    
+  Items: [
+   {
         name:'تقديمات دولمة',
         type: 'dinner',
         img1: 'http://test.easacc.com/noura/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-02-at-2.04.12-AM-300x300.jpeg',
@@ -345,18 +348,36 @@ const initialState = {
         img1:"https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
         img2:"https://test.easacc.com/noura/wp-content/uploads/2021/01/13f1bc1ac7469dfdf3ea0b2787510782.jpg",
         price:10000
-    }
-
-
+    },
+    
 ],
-    Favorite: [],
-    Cart: [],
-    Search: '',
-  };
-  // action -> {type: "ABC", payload: 2}
-  const ItemsReducer = (state = initialState, { type, payload }) => {
-    switch (type) {
-   
+  Favorite: [],
+  Cart: [],
+   Search: '',
+   Price:'',
+   Order:[],
+   Total:0
+};
+// action -> {type: "ABC", payload: 2}
+const ItemsReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+
+    case "SET_PRICE":
+          return{
+              Price:payload,
+              Items:state.Items,
+              Favorite:state.Favorite,
+              Cart:state.Cart
+          }
+          case "SET_ORDER":
+          return{
+              Order:payload,
+              Price:state.Price,
+              Items:state.Items,
+              Favorite:state.Favorite,
+              Cart:state.Cart,
+              
+          }
       case "SET_DATA":
             
         console.log("Search"+state.Search)
@@ -366,44 +387,66 @@ const initialState = {
           Favorite: state.Favorite,
           Cart: state.Cart, 
         };
-      case "SET_ITEMS":
-        return {
-          Items: [...state.Items, payload],
-          Favorite: state.Favorite,
-            Cart: state.Cart
-        };
-        //add to favorite
-        case "SET_FAVORITE":
-            // the payload is an object
-            const FavoriteList = state.Favorite.slice()
-            let x=false;
-          for (let i=0;i<FavoriteList.length;i++){
-              if(FavoriteList[i].name === payload.name){
-                  x=true
-                  alert("The items already exists")
-                  break;
-              }  
-        }
-        if(x === false){
-            FavoriteList.push(payload)
-        }
-        
-           
-            return {
-                Items: state.Items,
-                Favorite: FavoriteList,
-                Cart: state.Cart
-            };
-        //    deleteWatchLater
-        case "DELETE_FAVORITE":
-            return {
+    case "SET_ITEMS":
+      return {
+        Items: [...state.Items, payload],
+        Favorite: state.Favorite,
+        Cart: state.Cart,
+      };
+    //"DELETE_ITEMS
+    case "DELETE_ITEMS":
+      return {
+        Items: state.Items.filter((element) => {
+          return element.name !== payload.name;
+        }),
+        Favorite: state.Favorite,
+        Cart: state.Cart,
+      };
+    // updlet
+    case "UPDET_ITEMS":
+      return {
+        Items: state.Items.map((element) => {
+          if (element.name === payload.item.name) {
+            console.log(payload.data);
+            return payload.data;
+          }
+          return element;
+        }),
 
-                Items: state.Items,
-                Favorite: state.Favorite.filter((element) => {
-                    return element.name !== payload.name;
-               
-                }),
-            };
+        Favorite: state.Favorite,
+        Cart: state.Cart,
+      };
+    //add to favorite
+    case "SET_FAVORITE":
+      // the payload is an object
+      const FavoriteList = state.Favorite.slice();
+      let x = false;
+      for (let i = 0; i < FavoriteList.length; i++) {
+        if (FavoriteList[i].name === payload.name) {
+          x = true;
+          alert("The items already exists");
+          break;
+        }
+      }
+      if (x === false) {
+        FavoriteList.push(payload);
+      }
+
+      return {
+        Items: state.Items,
+        Favorite: FavoriteList,
+        Cart: state.Cart,
+      };
+    //    deleteWatchLater
+    case "DELETE_FAVORITE":
+      return {
+        Items: state.Items,
+        Cart:state.Cart,
+        Favorite: state.Favorite.filter((element) => {
+          return element.name !== payload.name;
+        }),
+      };
+    
             case "SET_CART":
                 // the payload is an object
                 const CartList = state.Cart.slice()
@@ -428,21 +471,23 @@ const initialState = {
                     Favorite: state.Favorite,
                     Cart: CartList
                 };
-            //    deleteWatchLater
-            case "DELETE_CART":
-                return {
-    
-                    Items: state.Items,
-                    Cart: state.Cart.filter((element) => {
-                        return element.name !== payload.name;
-                   
-                    }),
-                };
+          
+      
+    //    deleteWatchLater
+    case "DELETE_CART":
+      return {
+        Items: state.Items,
+        Favorite:state.Favorite,
+        Cart: state.Cart.filter((element) => {
+          return element.name !== payload.name;
+        }),
+        Order:state.Cart
+        
+      };
 
-      default:
-        return state;
-    }
-  };
-  
-  export default ItemsReducer;
-  
+    default:
+      return state;
+  }
+};
+
+export default ItemsReducer;

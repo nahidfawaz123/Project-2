@@ -5,8 +5,7 @@ import hart from "../image/heart.png";
 import "../App.css";
 import { useParams, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { Favorite } from "../reducers/items/actions";
-import { Cart } from "../reducers/items/actions";
+import { Favorite,Cart } from "../reducers/items/actions";
 function Service() {
   const Navigate = useNavigate();
   const dispatch = useDispatch();

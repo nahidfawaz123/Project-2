@@ -44,6 +44,8 @@ function Navr() {
     console.log(searchData(serchElm));
     navigate("/search");
   };
+
+  
   //Function Exit user
   const logoutuser = () => {
     dispatch(
@@ -56,14 +58,21 @@ function Navr() {
     navigate("/");
   };
 
+  // if(state.user.LoggdIn === true){
+  //   console.log("خخخخخخخخ");
+  //   navigate("/")
+  // } 
+
   return (
     <div className="Navigation">
       <Navbar bg="light" expand="lg" className="main">
         <Container style={{ display: "block" }}>
           <Row style={{ direction: "rtl" }}>
             <Col sm={3}>
-              <Navbar.Brand href="/">
+              <Navbar.Brand >
+              <Link to="/">
                 <img className="Logo" src={Logo} alt="img" />
+                </Link>
               </Navbar.Brand>
             </Col>
               <Col sm={6}>
@@ -99,7 +108,8 @@ function Navr() {
                         className="img-icon"
                         src={logOut}
                       />
-                      <p>{state.user.name}</p>
+                      
+                        <Link to="/Admin" > <p>{state.user.name}</p></Link>
                     </div>
                   ) : (
                     <Link to="/Login">
