@@ -12,6 +12,7 @@ import {
 import "../App.css";
 import bag from "../image/bag.png";
 import hart from "../image/heart.png";
+import downArrow  from "../image/downArrow.png";
 import { useParams } from "react-router-dom";
 
 function Items() {
@@ -41,10 +42,8 @@ function Items() {
     <div className="items-div">
       {slice.map((element, index) => {
           if(id===element.type){
-
-          
         return (
-            
+            <div>
           <Card style={{ width: "23.9rem" }}>
             <Card.Img variant="top" src={element.img1} className="item-image" />
             <Card.Body>
@@ -62,11 +61,18 @@ function Items() {
               </Card.Link>
             </Card.Body>
           </Card>
+          </div>
         );
           }
       })}
-      <button onClick={ ()=> loadmore()} > load more</button>
+      <div className="buttonLoad">
+      <img className="ImgSize" src={downArrow} onClick={()=>loadmore()}/>
+      {/* <Button  className="btn btn-dark d-block w-100"  onClick={ ()=> loadmore()} > load morePrimary</Button>{' '}  */}
+      </div>
+       
+    
     </div>
+    
   );
 }
 
