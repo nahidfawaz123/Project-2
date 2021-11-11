@@ -52,23 +52,28 @@ function Items() {
           
         return (
             
-          <Card style={{ width: "23.9rem" }}>
-            <Card.Img variant="top" src={element.img1} className="item-image" />
-            <Card.Body>
+          <><Card style={{ width: "23.9rem" }}>
+            <div className="container">
+              <Card.Img variant="top" src={element.img1} className="item-image image" />
+              <div className="overlay">
+                <div className="secandImage">
+                  <img src={element.img2} alt="Avatar" class="image"/>
+                </div>
+              </div>
+            </div>
+          <Card.Body>
               <Card.Title>{element.name}</Card.Title>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
+            </Card.Body><ListGroup className="list-group-flush">
               <ListGroupItem>{element.price} :السعر</ListGroupItem>
-            </ListGroup>
-            <Card.Body>
+            </ListGroup><Card.Body>
               <Card.Link href="#">
                 <img className="iconSize" src={hart} onClick={() => dispatch(Favorite(element))} />
               </Card.Link>
               <Card.Link href="#">
-                <img className="ImgSize" src={bag} onClick={()=>dispatch(Cart(element))}/>
+                <img className="ImgSize" src={bag} onClick={() => dispatch(Cart(element))} />
               </Card.Link>
             </Card.Body>
-          </Card>
+          </Card></>
         );
           }
       })}

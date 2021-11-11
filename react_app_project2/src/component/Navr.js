@@ -66,7 +66,8 @@ function Navr() {
                 <img className="Logo" src={Logo} alt="img" />
               </Navbar.Brand>
             </Col>
-            <Col sm={6}>
+              <Col sm={6}>
+            <div className="search">
               <FormControl
                 type="search"
                 placeholder="بحث"
@@ -74,7 +75,8 @@ function Navr() {
                 onChange={getData}
                 aria-label="Search"
               />
-              <img className="img-icon" src={search} onClick={sendData} />
+              <img className="img-icon-search  " src={search} onClick={sendData} />
+            </div>
             </Col>
             <Col sm={3}>
               <div className="icons  mt-3">

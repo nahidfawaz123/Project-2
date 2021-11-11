@@ -43,10 +43,20 @@ a {
 .img-icon {
   width: 30px;
 }
+.img-icon-search{
+  margin-top: 20px;
+  width: 30px; 
+  height: 40px;
+
+}
+.search {
+  display: flex;
+  gap: 10px;
+}
 .Link2 {
   margin-left: 300px;
 }
-.item {
+.item  {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
   width: 100%;
@@ -71,7 +81,7 @@ a {
 input {
   width: 100%;
 }
-.icon-LogOut {
+.icon-LogOut  {
   display: flex;
   gap: 6px;
 }
@@ -120,6 +130,7 @@ ul li {
     display: grid;
     grid-template-columns: 1fr;
   }
+
   .footer-apps {
     margin-top: 30px;
   }
@@ -129,6 +140,23 @@ ul li {
 }
 /* style.css --------------------------------------------------*/
 /* slider */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap");
+.service {
+  font-family: "Cairo", sans-serif;
+  color: #9c742c;
+}
+.service-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+.type {
+  background-color: #062120;
+  padding: 10px;
+  font-size: larger;
+  color: #9c742c;
+
+}
 .imgslider {
   background-repeat: no-repeat;
   background-position: center;
@@ -136,35 +164,69 @@ ul li {
   height: 80vh;
 }
 .blockSlider {
-  height: 150px;
-  width: 250px;
+  height: 250px;
+  width: 350px;
   padding: 15px;
   margin-bottom: 15%;
   margin-right: 100%;
   background-color: rgba(255, 255, 255, 0.719);
+  font-size: xx-large;
 }
 .service {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
 }
+.cardFavorite{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 20%;
+  height: 30%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.cardFavorite:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
   height: 100%;
   text-align: center;
+  padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-.ImgSize {
-  height: 20px;
-  width: 20px;
-  margin-left: 50%;
-  margin-right: 50%;
+.iconGrid {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-left: 50px;
 }
+.ImgSize {
+  height: 35px;
+  width: 35px;
+  margin-top: 5px;
+  cursor: pointer; 
+}
+ .iconSize {
+  height: 35px;
+  width: 35px;
+  margin-top: 5px;
+  cursor: pointer; 
+}
+.imageService{
+  display: block;
+  height:100%;
+  width: 100%;
+}
+
 
 /*  styles */
 
@@ -246,10 +308,7 @@ p {
   gap: 15px;
   justify-content: center;
 }
-.item-image{
-  width: 380px;
-  height: 280px;
-}
+
 
 
 
@@ -420,4 +479,44 @@ a:hover {
   background-repeat: no-repeat;
   background-position-x: 95%;
   background-position-y: center
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.image {
+  display: block;
+  width: 350px;
+  height: 280px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 350px;
+  height: 280px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #fcfcfc;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.secandImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 321px;
+  height: 280px;
 }
