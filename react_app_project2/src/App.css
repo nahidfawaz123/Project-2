@@ -521,9 +521,7 @@ ul {
 .submit-coupons{
   margin-left: 10px;
 }
-.items-full-screen{
   
-}
 
 
 #code {
@@ -537,6 +535,7 @@ ul {
   position: relative;
   width: 100%;
   margin-top: 10px;
+  margin-left: -15px;
 }
 
 .image {

@@ -77,7 +77,7 @@ function Items() {
         </form> 
 
       <div className="items-div">
-      {slice.map((element, index) => {
+      {state.item.map((element, index) => {
           if(id===element.type){
         return (
             <div>
@@ -107,10 +107,10 @@ function Items() {
         );
           }
       })}
-      <div className="buttonLoad">
+      {/* <div className="buttonLoad">
       <img className="ImgSize" src={downArrow} onClick={()=>loadmore()}/>
-      {/* <Button  className="btn btn-dark d-block w-100"  onClick={ ()=> loadmore()} > load morePrimary</Button>{' '}  */}
-      </div>
+      <Button  className="btn btn-dark d-block w-100"  onClick={ ()=> loadmore()} > load morePrimary</Button>{' '} 
+      </div> */}
     </div>
     </div>
     

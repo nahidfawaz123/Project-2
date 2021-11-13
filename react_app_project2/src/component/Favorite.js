@@ -8,7 +8,7 @@ import {
   ListGroupItem,
   ListGroup,
 } from "react-bootstrap";
-import  {deleteFavorite} from '../reducers/items/actions'
+import  {deleteFavorite ,Cart} from '../reducers/items/actions'
 import { Carousel, Button } from "react-bootstrap";
 import {  useNavigate } from "react-router"
 
@@ -49,7 +49,7 @@ console.log(state.Favorite);
                     <img className="iconSize" src={hart} onClick={() => dispatch(deleteFavorite(element))} />
                   </Card.Link>
                   <Card.Link href="#">
-                    <img className="ImgSize" src={bag} onClick={() => dispatch(Cart(element))} />
+                    <img className="ImgSize" src={bag} onClick={() =>  dispatch(Cart(element))} />
                   </Card.Link>
                 </Card.Body>
               </Card></>
